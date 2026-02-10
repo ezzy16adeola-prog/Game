@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BetRush</title>
+<style>
+  body { font-family: Arial; text-align: center; padding: 50px; }
+  button { font-size: 20px; margin: 5px; padding: 10px 20px; }
+  #result { margin-top: 20px; font-size: 24px; font-weight: bold; }
+</style>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+<h1>BetRush</h1>
+<p>Guess a number from 1 to 10!</p>
+
+<div id="buttons">
+  <button onclick="guess(1)">1</button>
+  <button onclick="guess(2)">2</button>
+  <button onclick="guess(3)">3</button>
+  <button onclick="guess(4)">4</button>
+  <button onclick="guess(5)">5</button>
+  <button onclick="guess(6)">6</button>
+  <button onclick="guess(7)">7</button>
+  <button onclick="guess(8)">8</button>
+  <button onclick="guess(9)">9</button>
+  <button onclick="guess(10)">10</button>
+</div>
+
+<div id="result"></div>
+
+<script>
+const tg = window.Telegram.WebApp;
+tg.expand();
+
+function guess(number) {
+    const winningNumber = Math.floor(Math.random() * 10) + 1;
+    const resultDiv = document.getElementById("result");
+    if(number === winningNumber) {
+        resultDiv.innerHTML = `🎉 You guessed ${number} and WON!`;
+    } else {
+        resultDiv.innerHTML = `❌ You guessed ${number}. The correct number was ${winningNumber}.`;
+    }
+}
+</script>
+</body>
+</html>
