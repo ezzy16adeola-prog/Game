@@ -16,7 +16,7 @@ from telegram.ext import (
 # =============================
 
 BOT_TOKEN = os.getenv("8708921630:AAHRcD16E0jmskVkjrAu8Wj-Uo256T-Hj2A")
-ADMIN_ID = 123456789  # <-- REPLACE WITH YOUR TELEGRAM USER ID
+ADMIN_ID = 8317899373
 
 # =============================
 # DATABASE SETUP
